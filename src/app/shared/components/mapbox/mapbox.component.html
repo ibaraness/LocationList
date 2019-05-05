@@ -1,0 +1,16 @@
+<p>Click on the map to get coordinates</p>
+<div id="mapboxContainer"></div>
+<div class="input-group mb-3">
+  <input type="text" class="form-control"
+   [ngbTypeahead]="search.bind(this)"
+   [(ngModel)]="searchedTerm"
+  (selectItem)="onSelectedLocation($event)"
+  placeholder="Search for a location"
+  aria-label="Search for a location"
+  aria-describedby="button-addon2">
+  <div class="input-group-append">
+    <button class="btn btn-outline-secondary" type="button" (click)="onSearch()" id="button-addon2">
+      <i class="fas fa-search"></i>
+    </button>
+  </div>
+</div>

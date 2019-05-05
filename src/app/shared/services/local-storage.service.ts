@@ -1,0 +1,30 @@
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class LocalStorageService {
+
+  constructor() {
+    if (typeof (Storage) === "undefined") {
+      throw new Error("Your browser doesn\'t support localStorage");
+    }
+  }
+
+  /**
+   * Fetch data from local storage
+   * @param name The reference name of the data to be fetched
+   */
+  public get(name: string): any {
+    return JSON.parse(localStorage.getItem(name));
+  }
+
+  /**
+   * Save an Object or Array in local storage
+   * @param name The reference name of the data to be save (and later accessed)
+   * @param data An Array or Object to be saved
+   */
+  public set(name: string, data: any): void {
+    localStorage[name] = JSON.stringify(data);
+  }
+}

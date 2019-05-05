@@ -1,0 +1,8 @@
+<div class="form-control">
+  <ng-container *ngIf="tags">
+    <span *ngFor="let tag of tags; let i = index" class="badge badge-pill badge-primary mr-1 catagories">
+      {{displayTags[i]}}
+      <i class="fas fa-times remove-category" (click)="removeTag(tag)" *ngIf="!disabled"></i>
+    </span>
+  </ng-container>
+</div>

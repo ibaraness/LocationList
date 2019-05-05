@@ -1,0 +1,10 @@
+<div class="modal-header bg-primary text-white">
+    <h4><i class="fas fa-info-circle"></i> INFO</h4>
+  </div>
+  <div class="modal-body">
+    <p>{{message}}</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-secondary" (click)="activeModal.dismiss('cancel click')">Cancel</button>
+    <button type="button" class="btn btn-danger" (click)="activeModal.close('Ok click')">Ok</button>
+  </div>

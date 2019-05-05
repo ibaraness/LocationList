@@ -1,0 +1,23 @@
+<h2 class="mt-4">Category: <span class="text-primary">{{category?.name}}</span></h2>
+<div *ngIf="category" class="row" [formGroup]="formGroup">
+    <div class="col-md-6">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" id="name"
+          formControlName="name"
+          placeholder="Enter location name">
+          <p *ngIf="error" class="text-danger">Error! {{errorMessge}}</p>
+        </div>
+
+        <button type="button"
+        (click)="saveCategory()"
+        class="btn btn-primary save-location"
+        [disabled]="category && !editMode || !formGroup.valid">Save</button>
+        <button type="button"
+        class="btn btn-secondary ml-1"
+        (click)="cancelEdit()"
+        [disabled]="category && !editMode || !formGroup.valid"
+        >Cancel</button>
+    </div>
+
+</div>

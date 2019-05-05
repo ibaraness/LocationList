@@ -1,0 +1,5 @@
+#mapboxContainer {
+  min-width:200px;
+  height:400px;
+  border:#999 1px solid;
+}
